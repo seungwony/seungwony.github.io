@@ -37,14 +37,16 @@
             position: absolute;
             text-align: center;
             width: 100%;
-            padding: 5.125rem 0 0;
+            padding: 4.125rem 0 0;
             left: 0;
+            
+            
         }
 
         .vertical-item.info .s1{
             font-family: 'KoPub Batang';
-            margin-bottom: 1.563rem;
-            font-size: 3rem;
+            margin-bottom: 0.863rem;
+            font-size: 2rem;
             font-weight: 600;
             line-height: 1;
             color: #fffbe5;
@@ -53,12 +55,13 @@
 
         .vertical-item.info .s2{
             margin-bottom: 1.563rem;
-            font-size: 1.713rem;
-            font-family: 'Nanum Myeongjo';
+            font-size: 1.13rem;
+            font-family: 'KoPub Batang';
             line-height: 1;
             font-weight: 700;
             color: #fff9dd;
             text-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+            
         }
 		 .visual-section .vertical-item {
 		    width: 100%;
@@ -72,6 +75,19 @@
 				-moz-box-shadow: 0px 0px 19px 0px rgba(82,82,82,0.51);
 				box-shadow: 0px 0px 19px 0px rgba(82,82,82,0.51);
 			}
+
+            .vertical-item.info{
+                padding: 5.125rem 0 0;
+            }
+            .vertical-item.info .s1{
+                margin-bottom: 1.563rem;
+                font-size: 3rem;
+            }
+
+            .vertical-item.info .s2{
+                margin-bottom: 1.563rem;
+                font-size: 1.713rem;
+            }
 		}
 
 	</style>
@@ -99,3 +115,20 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+    function hideAddressBar()
+    {
+        if(!window.location.hash)
+        {
+            if(document.height < window.outerHeight)
+            {
+                document.body.style.height = (window.outerHeight + 50) + 'px';
+            }
+    
+            setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
+        }
+        }
+    window.addEventListener("load", function(){ if(!window.pageYOffset){ hideAddressBar(); } } );
+    window.addEventListener("orientationchange", hideAddressBar );
+    </script>
