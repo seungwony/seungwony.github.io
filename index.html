@@ -1,8 +1,8 @@
 ﻿<html>
 <head>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,target-densitydpi=medium-dpi">
-	<title>수잔과 승원 결혼</title>
-	<meta property="og:title" content="수잔과 승원의 모바일 청첩">
+	<title>수잔♥승원 결혼합니다.</title>
+	<meta property="og:title" content="수잔♥승원 결혼합니다.">
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/nanummyeongjo.css">
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/notosanskr.css">
@@ -107,7 +107,7 @@
 
         .greeting-title{
             text-align: center;
-            margin-top: 50px;
+            margin-top: -10px;
             font-size: 1.6em;
             font-family: 'KoPub Batang';
         }
@@ -121,14 +121,39 @@
             padding-bottom: 50px;
         }
 
+        .family {
+            padding: 30px;
+            font-size: 16px;
+            font-family: 'KoPub Batang';
+            line-height: 1.9;
+        }
+
+        .family .man{
+            color: #0a99cf;
+        }
+
+        .family .woman{
+            color: #bd63f6;
+        }
+
+        .family .stronger{
+            font-size: 1.4em;
+        }
+        .hr{
+            width: 20%;
+            background: #ffdba2;
+            height: 2px;
+            margin: auto;
+        }
+
 		@media (min-width: 720px){
 			.wrapper {
 			    max-width: 720px;
 			    margin: 0 auto;
 
-			    -webkit-box-shadow: 0px 0px 19px 0px rgba(82,82,82,0.51);
-				-moz-box-shadow: 0px 0px 19px 0px rgba(82,82,82,0.51);
-				box-shadow: 0px 0px 19px 0px rgba(82,82,82,0.51);
+			    -webkit-box-shadow: 0px 0px 19px 0px rgba(82,82,82,0.2);
+				-moz-box-shadow: 0px 0px 19px 0px rgba(82,82,82,0.2);
+				box-shadow: 0px 0px 19px 0px rgba(82,82,82,0.2);
 			}
 
             .vertical-item.info{
@@ -171,12 +196,19 @@
 		</section>
       
         <section > 
-            <h2 class="greeting-title">초대합니다.</h2>
+            <h2 class="greeting-title">- INVITE YOU -</h2>
             <p class="greeting-txt">
 
 인생의 긴 여정 속에 평생을 함께 하고 싶은 사람을 만났습니다.<br>이제 함께 한 곳을 바라보며 새로운 여정을 떠나고자 합니다.<br>사랑의 이름으로 지켜나갈 수 있게 앞날의 축복을 주시면 감사하겠습니다.
 
             </p>
+
+            <div class="hr"></div>
+
+            <div class="family">
+                <div><span class="man">신랑 - </span>양보운·신영은의 장남, <span class="stronger">승원</span></div>
+                <div><span class="woman">신부 - </span>배성환·정영금의 차녀, <span class="stronger">수잔</span></div>
+            </div>
         </section>
         
 	</div>
@@ -185,19 +217,3 @@
 </body>
 </html>
 
-<script type="text/javascript">
-    function hideAddressBar()
-    {
-        if(!window.location.hash)
-        {
-            if(document.height < window.outerHeight)
-            {
-                document.body.style.height = (window.outerHeight + 50) + 'px';
-            }
-    
-            setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
-        }
-        }
-    window.addEventListener("load", function(){ if(!window.pageYOffset){ hideAddressBar(); } } );
-    window.addEventListener("orientationchange", hideAddressBar );
-    </script>
