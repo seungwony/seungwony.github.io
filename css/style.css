@@ -70,7 +70,9 @@ button.mfp-arrow, .mfp-counter {
   z-index: 1043;
   position: fixed;
   outline: none !important;
-  -webkit-backface-visibility: hidden; }
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden;
+}
 
 .mfp-container {
   text-align: center;
