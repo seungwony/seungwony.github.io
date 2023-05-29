@@ -10,7 +10,7 @@ body .mfp-wrap {
     height: auto;
 }
 .mfp-bottom-bar,*{
-   font-family: 'Abel', sans-serif;
+   /* font-family: 'Abel', sans-serif; */
 }
 .magnific-img {
     display: inline-block;
