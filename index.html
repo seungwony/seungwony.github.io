@@ -36,6 +36,12 @@
 		.wrapper {
 			width: 100%;
 		}
+        .wrapper #lottieBox {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 1;
+        }
         /* waves */
         .ocean {
             height: 80px; /* change the height of the waves here */
@@ -246,6 +252,28 @@
         .location_map img{
             width: 100%;
         }
+
+        .starSmall {
+            background-image: url('./images/star.png');
+            background-size: cover;
+            position: absolute;
+            width: 15px;
+            height: 15px;
+        }
+        .starMedium {
+            background-image: url('./images/star.png');
+            background-size: cover;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+        }
+        .starLarge {
+            background-image: url('./images/star.png');
+            background-size: cover;
+            position: absolute;
+            width: 25px;
+            height: 25px;
+        }
         
 		@media (min-width: 720px){
 			.wrapper {
@@ -284,6 +312,7 @@
 
 	
 	<div class="wrapper">
+        
 		<section class="content main">
             <div class="vertical-item info">
                 <div class="s1">배수잔, 양승원</div>
@@ -423,6 +452,10 @@
                 &nbsp;혹여나 참석하기 힘드시더라도 축복해 주신다면 감사한 마음으로 잊지 않고 축복해주시는 만큼 행복하게 삶을 꾸려나가도록 노력하겠습니다.
             </div>
         </section>
+
+        <section>
+            <!-- 공유 -->
+        </section>
         
 	</div>
 	
@@ -433,6 +466,7 @@
 <script>
     
 $(function() {
+    startEffect();
   $('#datepicker').datepicker({
     onSelect: function(dateText, inst) {
         inst.show();
@@ -478,4 +512,56 @@ $(function() {
     });
 
 });
+
+var startEffect = function() {
+	if ($(".wrapper #lottieBox").length == 0) {
+		$.getScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js', function () {
+
+			$(".wrapper").prepend('<div id="lottieBox" class="lottie_box"></div>');
+
+			setTimeout(() => {
+				starStart();
+			}, 1000);
+
+			const width = window.innerWidth,
+				height = window.innerHeight+100,
+				starCont = document.getElementById("lottieBox"),
+				starSizes = ["Small", "Medium", "Large"],
+				// starSizes = ["Large"]
+				starTypes = ["star"],
+				// starTypes = ["round", "star", "sharp"],
+				starPiece = 25;
+
+			function starStart(){
+				for(let i=0; i<starPiece; i++){
+					let starPieceSpan = document.createElement("span");
+					let starSizeIndex = Math.ceil(Math.random() * starSizes.length) -1;       //0,1,2 랜덤으로 출력하기
+					let starSize = starSizes[starSizeIndex];
+					let starTypeIndex = Math.ceil(Math.random() * starTypes.length) -1;
+					let starType = starTypes[starTypeIndex];
+			
+					gsap.set(starPieceSpan, {attr: {class: starType + starSize}, x: range(-50, width), y: range(-100, -200) })
+					
+					starCont.appendChild(starPieceSpan);
+					staring(starPieceSpan);
+				}
+			}
+			
+			// 눈의 범위 설정하기 
+			function range(min, max) {
+				return min + Math.random() * (max - min)
+			};
+			
+			// 눈 애니메이션 설정하기
+			function staring(elem){
+				gsap.to(elem, {duration: range(15, 20), y: height, ease: "none", repeat:-1, delay: -1000});
+				gsap.to(elem, {duration: range(4, 8), x: '+=100', repeat: -1, yoyo: true, ease: Sine.easeInOut});
+				gsap.to(elem, {duration: range(2, 8), rotation: range(0, 360), repeat: -1, yoyo: true, ease:Sine.easeInOut, delay: -1000});
+			}
+		});
+	}
+
+	
+}
+
 </script>
