@@ -1,4 +1,10 @@
-
+body { -webkit-overflow-scrolling: touch; } 
+body.mfp-active { overflow: hidden; -webkit-overflow-scrolling: auto; width: 100%; position: fixed; overflow: auto; } 
+body .mfp-wrap { 
+    position: fixed; overflow: auto; 
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translateZ(0);
+}
 .magnific-img img {
     width: 100%;
     height: auto;

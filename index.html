@@ -420,6 +420,7 @@
 </html>
 
 <script>
+    
 $(function() {
   $('#datepicker').datepicker({
     onSelect: function(dateText, inst) {
@@ -449,6 +450,17 @@ $(function() {
             opener: function(openerElement) {
 
                 return openerElement.is('img') ? openerElement : openerElement.find('img');
+            }
+        },
+        // alignTop: true,
+        // overflowY: 'scroll',
+        fixedContentPos: true,
+        callbacks: {
+            beforeOpen: function() {
+                $('body').addClass('mfp-active');
+            },
+            beforeClose: function() {
+                $('body').removeClass('mfp-active');
             }
         }
 
