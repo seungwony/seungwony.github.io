@@ -7,15 +7,25 @@
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/nanummyeongjo.css">
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/notosanskr.css">
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/kopubbatang.css">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="/js/datepicker-ko.js"></script>
+    
 	<!-- <link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/main.js"></script> -->
 	<style>
-		font-family: 'Nanum Myeongjo', 'Nanum Gothic', sans-serif, 'helvetica', serif, 'AppleGothic';
+		
 		html {
-		    font-size: 32px;
+		    font-size: 16px;
 		}
 		body{
-
+            font-family: 'KoPub Batang', 'Nanum Myeongjo', 'Nanum Gothic', sans-serif, 'helvetica', serif, 'AppleGothic';
 		    width: 100%;
 		    height: 100%;
 		    margin: 0px;
@@ -105,20 +115,32 @@
 		    width: 100%;
 		}
 
-        .greeting-title{
+        .title{
             text-align: center;
-            margin-top: -10px;
+            margin-top: 100px;
             font-size: 1.6em;
             font-family: 'KoPub Batang';
         }
-        .greeting-txt{
+
+        .txt{
             font-size: 1rem;
             font-family: 'KoPub Batang';
             line-height: 1.9;
             font-weight: 400;
             padding: 20px 40px;
             color: #404040;
+            
+        }
+        .greeting.title{
+            margin-top: -10px;
+        }
+        .greeting.txt{
             padding-bottom: 50px;
+        }
+
+        .location.title{
+            margin-top: 50px;
+            margin-bottom: 30px;
         }
 
         .family {
@@ -146,6 +168,78 @@
             margin: auto;
         }
 
+        #dateTitle{
+            font-size: 26px;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 40px;
+            font-family: 'KoPub Batang';
+            color: gray;
+        }
+        
+        .ui-datepicker{
+            width: 100%;
+            padding:0px;
+        }
+        .ui-datepicker .ui-datepicker-title{
+            font-size: 20px;
+        }
+        .ui-datepicker td{
+            padding: 10px 0px;
+        }
+        .ui-datepicker td span, .ui-datepicker td a{
+            padding: 10px 15px;
+        }
+
+      
+
+        .ui-widget.ui-widget-content{
+            border: 0px;
+            font-family: 'KoPub Batang';
+        }
+
+        .ui-datepicker .ui-datepicker-header{
+            border: 0px;
+            background: transparent;
+            display: none;
+        }
+        .ui-datepicker .ui-datepicker-prev{
+            display: none;
+        }
+        .ui-datepicker .ui-datepicker-next{
+            display: none;
+        }
+        .ui-datepicker th{
+            color: #dbaf1e;
+        }
+
+        .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+            border: 0px solid #c5c5c5;
+            background: #ffffff;
+            text-align: center;
+            color: #a0a0a0;
+        }
+
+        .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus {
+            border: 0px solid #cccccc;
+            background: #fff;
+            font-weight: normal;
+            color: #2b2b2b;
+        }
+ 
+        .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+            color: #ffffff;
+            border: solid 1px;
+            background: #dbaf1e;
+            border-radius: 20px;
+            width: 10px;
+            margin: auto;
+        }
+
+        .location_map img{
+            width: 100%;
+        }
+        
 		@media (min-width: 720px){
 			.wrapper {
 			    max-width: 720px;
@@ -167,6 +261,12 @@
             .vertical-item.info .s2{
                 margin-bottom: 1.563rem;
                 font-size: 1.713rem;
+            }
+            .location_map{
+                text-align: center;
+            }
+            .location_map img{
+                width: auto;
             }
 		}
 
@@ -196,8 +296,8 @@
 		</section>
       
         <section > 
-            <h2 class="greeting-title">- INVITE YOU -</h2>
-            <p class="greeting-txt">
+            <h2 class="greeting title">- INVITE YOU -</h2>
+            <p class="greeting txt">
 
 인생의 긴 여정 속에 평생을 함께 하고 싶은 사람을 만났습니다.<br>이제 함께 한 곳을 바라보며 새로운 여정을 떠나고자 합니다.<br>사랑의 이름으로 지켜나갈 수 있게 앞날의 축복을 주시면 감사하겠습니다.
 
@@ -209,11 +309,150 @@
                 <div><span class="man">신랑 - </span>양보운·신영은의 장남, <span class="stronger">승원</span></div>
                 <div><span class="woman">신부 - </span>배성환·정영금의 차녀, <span class="stronger">수잔</span></div>
             </div>
+
+        </section>
+        <section>
+            <!-- <h2 class="title">- WEDDING DAY -</h2> -->
+            <div>
+                <div id="dateTitle">2023.09. 2PM</div>
+                <div id="datepicker"></div>
+            </div>
+        </section>
+        <section>
+            <h2 class="location title">- LOCATION -</h2>
+            <div class="location_map">
+                <img src="/images/map.jpg">
+            </div>
+        </section>
+        <section style="text-align: center;">
+            <h2 class="title">- GALLERY -</h2>
+            <section class="img-gallery-magnific">
+                <div class="magnific-img">
+                    <a class="image-popup-vertical-fit" href="/images/IMG_0745.JPG" title="웨딩사진">
+                        <img src="/images/IMG_0745.JPG" alt="웨딩사진" loading="lazy" />
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="magnific-img">
+                    <a class="image-popup-vertical-fit" href="/images/IMG_0744.JPG" title="웨딩사진2">
+                        <img src="/images/IMG_0744.JPG" alt="웨딩사진2" loading="lazy" />
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="magnific-img">
+                    <a class="image-popup-vertical-fit" href="/images/IMG_0743.JPG" title="웨딩사진3">
+                        <img src="/images/IMG_0743.JPG" alt="웨딩사진3" loading="lazy" />
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="magnific-img">
+                    <a class="image-popup-vertical-fit" href="/images/IMG_0742.JPG" title="웨딩사진4">
+                        <img src="/images/IMG_0742.JPG" alt="웨딩사진4" loading="lazy" />
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="magnific-img">
+                    <a class="image-popup-vertical-fit" href="/images/IMG_0746.jpg" title="웨딩사진5">
+                        <img src="/images/IMG_0746.jpg" alt="웨딩사진5" loading="lazy" />
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="magnific-img">
+                    <a class="image-popup-vertical-fit" href="/images/IMG_0740.JPG" title="웨딩사진6">
+                        <img src="/images/IMG_0740.JPG" alt="웨딩사진6" loading="lazy" />
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="magnific-img">
+                    <a class="image-popup-vertical-fit" href="/images/IMG_0741.JPG" title="웨딩사진5">
+                        <img src="/images/IMG_0741.JPG" alt="웨딩사진5" loading="lazy" />
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="magnific-img">
+                    <a class="image-popup-vertical-fit" href="/images/IMG_0739.JPG" title="웨딩사진7">
+                        <img src="/images/IMG_0739.JPG" alt="웨딩사진7" loading="lazy" />
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="magnific-img">
+                    <a class="image-popup-vertical-fit" href="/images/IMG_0747.JPG" title="웨딩사진7">
+                        <img src="/images/IMG_0747.JPG" alt="웨딩사진8" loading="lazy" />
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </section>
+            <div class="clear">
+        </section>
+        <!-- <section>
+            <h2 class="title">- 마음 전하실곳 -</h2>
+            <div>
+
+            </div>
+        </section> -->
+
+      
+
+        <!-- <section>
+            <h2 class="location title">- 본식 이후 가볼 만한 곳 -</h2>
+            <div>
+
+            </div>
+        </section> -->
+
+        <section>
+            <h2 class=" title">- THANKS TO -</h2>
+            <div class="txt">
+                <!-- &nbsp;결혼 준비하는 과정에서 특별하게 준비할 수 있었던 부분이 모바일 청첩장이었고 어쩌면 쉽게 만들 수 있지만 공을 들인 부분이 이 청첩장입니다. <br>
+                <br> -->
+                &nbsp;한분 한분 직접 찾아뵙고 인사드려야 하지만 때로는 여러가지 이유로 이 모바일 청첩장으로만으로 소식을 전해드릴 수 밖에 없을 수 있는데 단지 그런 이유로 모바일 청첩장이 가볍게 여기지 않았으면 하는 마음에서 직접 제작하여 공을 들였습니다. <br>
+                <br>
+                &nbsp;새롭게 시작될 인생의 제2막이 여는 순간에 짧던 길던 지난 스쳐간 소중한 인연들과 기쁜 소식을 함께 나누고자 합니다.<br>
+                <br>
+                &nbsp;혹여나 참석하기 힘드시더라도 축복해 주신다면 감사한 마음으로 잊지 않고 축복해주시는 만큼 행복하게 삶을 꾸려나가도록 노력하겠습니다.
+            </div>
         </section>
         
 	</div>
 	
-
+    
 </body>
 </html>
 
+<script>
+$(function() {
+  $('#datepicker').datepicker({
+    onSelect: function(dateText, inst) {
+        inst.show();
+        // console.log($(this).datepicker("getDate"));
+
+    }
+    
+  });
+
+  $('#datepicker').datepicker("setDate", new Date(2023, 08, 02));
+  $('#datepicker').datepicker('option','disabled',true);
+
+  $('.image-popup-vertical-fit').magnificPopup({
+        type: 'image',
+        mainClass: 'mfp-with-zoom', 
+        gallery:{
+                    enabled:true
+                },
+
+        zoom: {
+            enabled: true, 
+
+            duration: 300, // duration of the effect, in milliseconds
+            easing: 'ease-in-out', // CSS transition easing function
+
+            opener: function(openerElement) {
+
+                return openerElement.is('img') ? openerElement : openerElement.find('img');
+            }
+        }
+
+    });
+
+});
+</script>
