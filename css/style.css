@@ -849,7 +849,9 @@ opacity: 1;
     margin-top: 5px;
     font-size: 0.8em;
 }
-
+.tour-slider a{
+    color:gray
+}
 #link-copy{
     padding: 30px;
     text-align: center;
