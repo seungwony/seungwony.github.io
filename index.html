@@ -9,8 +9,10 @@
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/notosanskr.css">
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/kopubbatang.css">
 
+    
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nanogallery2/dist/css/nanogallery2.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" >
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -24,6 +26,11 @@
 
     <link rel="stylesheet" href="/css/animate.css">
     <script src="/js/wow.min.js"></script>
+    <style>
+        .nanogallery_gallerytheme_dark_nanogallery2 .nGY2GThumbnail{
+            border-color: #fff!important;
+        }
+    </style>
 </head>
 <body>
 
@@ -81,7 +88,25 @@
         </section>
         <section style="text-align: center;">
             <h2 class="title">- GALLERY -</h2>
-            <section class="img-gallery-magnific">
+            <div id="nanogallery2"
+                data-nanogallery2 = '{ 
+                "thumbnailWidth":   "auto",
+                "thumbnailHeight":  200,
+                "itemsBaseURL":     "/images/"
+                }'
+                        >
+            <!-- content of the gallery -->
+            <a href="IMG_0745.JPG" data-ngthumb="IMG_0745.JPG"></a>
+            <a href="IMG_0744.JPG" data-ngthumb="IMG_0744.JPG"></a>
+            <a href="IMG_0743.JPG" data-ngthumb="IMG_0743.JPG"></a>
+            <a href="IMG_0742.JPG" data-ngthumb="IMG_0742.JPG"></a>
+            <a href="IMG_0746.JPG" data-ngthumb="IMG_0746.JPG"></a>
+            <a href="IMG_0740.JPG" data-ngthumb="IMG_0740.JPG"></a>
+            <a href="IMG_0741.JPG" data-ngthumb="IMG_0741.JPG"></a>
+            <a href="IMG_0739.JPG" data-ngthumb="IMG_0739.JPG"></a>
+            <a href="IMG_0747.JPG" data-ngthumb="IMG_0747.JPG"></a>
+            </div>
+            <!-- <section class="img-gallery-magnific">
                 <div class="magnific-img">
                     <a class="image-popup-vertical-fit" href="/images/IMG_0745.JPG" title="웨딩사진">
                         <img src="/images/IMG_0745.JPG" alt="웨딩사진" loading="lazy" />
@@ -136,7 +161,7 @@
                         <i class="fa fa-search-plus" aria-hidden="true"></i>
                     </a>
                 </div>
-            </section>
+            </section> -->
             <div class="clear">
         </section>
         <section>
@@ -343,3 +368,4 @@
 </html>
 
 <script src="/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nanogallery2/dist/jquery.nanogallery2.min.js"></script>
