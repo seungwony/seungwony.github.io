@@ -548,7 +548,13 @@ body{
     margin-top: 50px;
     margin-bottom: 0px;
 }
-
+.location_map .direction{
+  padding: 20px;
+  line-height: 1.5;
+}
+.location_map .direction strong{
+  font-size: 1.1em;
+}
 .family {
     padding: 30px;
     font-size: 16px;
