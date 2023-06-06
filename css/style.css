@@ -421,7 +421,8 @@ html {
     font-size: 16px;
 }
 body{
-    font-family: 'KoPub Batang', 'Nanum Myeongjo', 'Nanum Gothic', sans-serif, 'helvetica', serif, 'AppleGothic';
+    /* font-family: 'KoPub Batang', 'Nanum Myeongjo', 'Nanum Gothic', sans-serif, 'helvetica', serif, 'AppleGothic'; */
+    font-family: 'Nanum Gothic', 'AppleGothic', sans-serif, 'helvetica', serif;
     width: 100%;
     height: 100%;
     margin: 0px;
@@ -530,7 +531,7 @@ body{
 
 .txt{
     font-size: 1rem;
-    font-family: 'KoPub Batang';
+    /* font-family: 'KoPub Batang'; */
     line-height: 1.9;
     font-weight: 400;
     padding: 20px 40px;
@@ -558,7 +559,7 @@ body{
 .family {
     padding: 30px;
     font-size: 16px;
-    font-family: 'KoPub Batang';
+    /* font-family: 'KoPub Batang'; */
     line-height: 1.9;
 }
 
